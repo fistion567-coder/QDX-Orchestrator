@@ -79,4 +79,9 @@ Este flujo asegura:
 Este proyecto está bajo licencia MIT.  
 El uso comercial o integración requiere conexión con el token $QDX y autorización del autor.  
 © 2026 Roni — Todos los derechos reservados.
----
+---### 🔗 Enlace al repositorio
+[Visita el proyecto en GitHub](https://github.com/fistio/QDX-Orchestrator)
+### 📬 Contacto
+Si quieres colaborar, aportar ideas o conocer más sobre QDX-Orchestrator, puedes escribirme directamente:
+
+- 📧 Email: fiston567@gmail.com
