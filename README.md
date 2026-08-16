@@ -85,3 +85,190 @@ El uso comercial o integración requiere conexión con el token $QDX y autorizac
 Si quieres colaborar, aportar ideas o conocer más sobre QDX-Orchestrator, puedes escribirme directamente:
 
 - 📧 Email: fiston567@gmail.com
+- # QDX-Orchestrator – Arquitectura Técnica
+
+## 🔐 Seguridad Post-Quantum
+- Algoritmos: CRYSTALS-Dilithium para firmas digitales.
+- Objetivo: Blindar transacciones contra ataques cuánticos.
+- Aplicación: Nodos, validadores y wallets integran estas primitivas.
+
+## 🌉 Interoperabilidad Layer-0
+- Adaptadores nativos: Ethereum, Solana, Bitcoin.
+- Mecanismo: Clientes ligeros integrados en nodos.
+- Beneficio: Transferencias cross-chain sin necesidad de terceros.
+
+## 💱 DEX Integrado
+- Motor AMM concentrado embebido en protocolo.
+- Pools permissionless con recompensas en $QDX.
+- Ventaja: Liquidez inmediata sin depender de contratos externos.
+
+## 🛡️ Asset Shielding
+- Conversión: Activos clásicos → equivalentes resistentes (ej. ETH → qETH).
+- Reversibilidad: Desblindaje si se detecta ataque real.
+- Impacto: Protección automática de fondos ante vulnerabilidades.
+
+## ☢️ Protocolo Doomsday
+- Función: Detener puentes si se rompe ECDSA.
+- Impacto: Protección inmediata de fondos.
+- Escenario: Activación solo en caso de ataque cuántico confirmado.
+
+---
+
+## 📊 Roadmap Técnico
+1. Integración con Solana (Q4 2026).
+2. Expansión a Ethereum y Bitcoin (Q1 2027).
+3. Auditoría externa de seguridad (Q2 2027).
+4. Lanzamiento oficial del token $QDX (Q3 2027).
+
+---
+
+## 💻 Ejemplo de Transacción Blindada
+
+Este ejemplo muestra cómo convertir un activo clásico (ETH) en su versión blindada (qETH) dentro de QDX-Orchestrator.
+
+```javascript
+// example_tx.js
+
+import { QDXShield } from "qdx-orchestrator";
+
+// Inicializar cliente
+const client = new QDXShield({
+  network: "testnet",
+  apiKey: "TU_API_KEY"
+});
+
+// Activo clásico a blindar
+const asset = {
+  type: "ETH",
+  amount: 1.0,
+  from: "0xUsuarioClasico",
+  to: "0xUsuarioBlindado"
+};
+
+// Ejecutar blindaje
+async function shieldAsset() {
+  try {
+    const tx = await client.shield(asset);
+    console.log("Transacción blindada:", tx.hash);
+  } catch (error) {
+    console.error("Error en blindaje:", error);
+  }
+
+}
+
+shieldAsset();
+
+## 🔄 Flujo de Transacción Blindada
+
+```mermaid
+flowchart TD
+    A[Activo clásico: ETH] --> B[Solicitud de blindaje en QDXShield]
+    B --> C[Conversión automática a qETH]
+    C --> D[Validación con firmas post-quantum]
+    D --> E[Registro en Layer-0 interoperable]
+    E --> F[DEX integrado: liquidez inmediata]
+    F --> G[Almacenamiento seguro en wallet blindada]
+
+## 🗺️ Roadmap Visual
+
+```mermaid
+timeline
+    title Roadmap QDX-Orchestrator
+    Q4 2026 : Integración con Solana
+    Q1 2027 : Expansión a Ethereum y Bitcoin
+    Q2 2027 : Auditoría externa de seguridad
+    Q3 2027 : Lanzamiento oficial del token $QDX
+## 🛡️ Modelo Visual de Seguridad Cuántica
+
+```mermaid
+flowchart LR
+    A[Ataques Clásicos] --> B[Protección ECDSA tradicional]
+    B --> C[Mitigación parcial]
+
+    D[Ataques Cuánticos] --> E[Shor's Algorithm rompe ECDSA]
+    E --> F[Activación Protocolo Doomsday]
+
+    F --> G[Asset Shielding: ETH → qETH]
+    G --> H[Firmas Post-Quantum: Dilithium]
+    H --> I[Transacción validada y segura]
+
+# QDX-Orchestrator – Paquete Visual Consolidado
+
+## 🔐 Seguridad Post-Quantum
+- Algoritmos: CRYSTALS-Dilithium para firmas digitales.
+- Objetivo: Blindar transacciones contra ataques cuánticos.
+- Aplicación: Nodos, validadores y wallets integran estas primitivas.
+
+## 🌉 Interoperabilidad Layer-0
+- Adaptadores nativos: Ethereum, Solana, Bitcoin.
+- Mecanismo: Clientes ligeros integrados en nodos.
+- Beneficio: Transferencias cross-chain sin necesidad de terceros.
+
+## 💱 DEX Integrado
+- Motor AMM concentrado embebido en protocolo.
+- Pools permissionless con recompensas en $QDX.
+- Ventaja: Liquidez inmediata sin depender de contratos externos.
+
+## 🛡️ Asset Shielding
+- Conversión: Activos clásicos → equivalentes resistentes (ej. ETH → qETH).
+- Reversibilidad: Desblindaje si se detecta ataque real.
+- Impacto: Protección automática de fondos ante vulnerabilidades.
+
+## ☢️ Protocolo Doomsday
+- Función: Detener puentes si se rompe ECDSA.
+- Impacto: Protección inmediata de fondos.
+- Escenario: Activación solo en caso de ataque cuántico confirmado.
+
+---
+
+## 🔄 Flujo de Transacción Blindada
+
+```mermaid
+flowchart TD
+    A[Activo clásico: ETH] --> B[Solicitud de blindaje en QDXShield]
+    B --> C[Conversión automática a qETH]
+    C --> D[Validación con firmas post-quantum]
+    D --> E[Registro en Layer-0 interoperable]
+    E --> F[DEX integrado: liquidez inmediata]
+    F --> G[Almacenamiento seguro en wallet blindada]h
+# QDX-Orchestrator
+## 🌐 Visión
+QDX-Orchestrator es un protocolo blockchain post-quantum diseñado para blindar activos clásicos, integrar un DEX nativo y ofrecer interoperabilidad Layer-0 entre cadenas como Solana, Ethereum y Bitcoin.
+## 📑 Documentación
+- **Whitepaper**: ./WHITEPAPER.md  
+- **Arquitectura**: ./ARCHITECTURE.md  
+- **Aviso Legal**: ./LEGAL.md  
+## 🚀 Características Clave
+- 🔐 **Seguridad Post-Quantum**: Firmas CRYSTALS-Dilithium.  
+- 🌉 **Interoperabilidad Layer-0**: Puentes nativos entre cadenas.  
+- 💱 **DEX Integrado**: Liquidez inmediata en $QDX.  
+- 🛡️ **Asset Shielding**: Conversión ETH → qETH.  
+- ☢️ **Protocolo Doomsday**: Protección ante ataques cuánticos confirmados.  
+## 📊 Roadmap Visual
+```mermaid
+timeline
+    title Roadmap QDX-Orchestrator
+    Q4 2026 : Integración con Solana
+    Q1 2027 : Expansión a Ethereum y Bitcoin
+    Q2 2027 : Auditoría externa de seguridad
+    Q3 2027 : Lanzamiento oficial del token $QDX
+
+flowchart TD
+    A[Activo clásico: ETH] --> B[Solicitud de blindaje en QDXShield]
+    B --> C[Conversión automática a qETH]
+    C --> D[Validación con firmas post-quantum]
+    D --> E[Registro en Layer-0 interoperable]
+    E --> F[DEX integrado: liquidez inmediata]
+    F --> G[Almacenamiento seguro en wallet blindada]
+
+flowchart LR
+    A[Ataques Clásicos] --> B[Protección ECDSA tradicional]
+    B --> C[Mitigación parcial]
+    D[Ataques Cuánticos] --> E[Shor's Algorithm rompe ECDSA]
+    E --> F[Activación Protocolo Doomsday]
+    F --> G[Asset Shielding: ETH → qETH]
+    G --> H[Firmas Post-Quantum: Dilithium]
+    H --> I[Transacción validada y segura  
+
+-💌comtacto: fistion567@gmail.com
+    
