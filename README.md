@@ -1,4 +1,4 @@
-# QDX-Orchestrator
+ QDX-Orchestrator
 “Smart contract médico en Solana para simulaciones moleculares”
 # Proyecto QDX: Orchestrator en Solana
 
@@ -338,6 +338,20 @@ for bloque in qdx.cadena:
 
 print("¿Cadena válida?", qdx.validar_cadena())
 
+# QDX-Orchestrator
 
+## Descripción del demo
+Este repositorio contiene el **whitepaper** del proyecto QDX-Orchestrator y un **demo funcional en Python**. El demo muestra cómo se pueden registrar y verificar datos médicos en una blockchain básica, asegurando **trazabilidad** e **integridad** mediante el uso de hashes SHA-256.
+
+## Propósito del proyecto
+El objetivo de QDX-Orchestrator es crear una infraestructura blockchain enfocada en aplicaciones médicas, garantizando transparencia, seguridad y confianza en el manejo de información crítica. Este demo sirve como **prueba mínima viable** para validar la idea presentada en el whitepaper y demostrar su potencial técnico.
+
+## Cómo ejecutar el demo
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/QDX-Orchestrator.git
+cd QDX-Orchestrator/demo
+
+python qdx_demo.py
 -💌comtacto: fistion567@gmail.com
     
