@@ -52,7 +52,7 @@ This workflow ensures:
 This project is licensed under the MIT License.
 Commercial use or integration requires connection with the $QDX token and authorization from the author.
 © 2026 Roni — All rights reserved.
-
+README.md
 ---
 
 ### 🔗 Repository Link
