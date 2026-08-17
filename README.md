@@ -61,6 +61,37 @@ The platform utilizes a hybrid liquidity engine to ensure cheap, frictionless op
 
 * **Gas Optimization Layer**: Intended for ultra-low fee handling, abstracting multi-chain complexity so medical enterprises only need to interact with a unified interface.
 * **qRC20 Token Utility**: The **\$QDX** token functions as the native network key, automatically covering cross-chain bridge relay costs, validation rewards, and priority orchestration queuing.
+### 🔄 Advanced Fault Tolerance & Cross-Chain Atomicity
+
+The most complex engineering challenge of the **QDX-Orchestrator** is ensuring atomic transaction execution across multiple chains. If a bridge relay fails mid-transit, our automated state machine guarantees asset recovery without human intervention:
+
+```mermaid
+stateDiagram-v2
+    [*] --> RequestInitiated: Client submits Tx
+    RequestInitiated --> TokenLocked: Escrow locks \$QDX/USDC
+    
+    state BridgeExecution <<choice>>
+    TokenLocked --> BridgeExecution: Relay payload via Bridge
+    
+    BridgeExecution --> TxSuccess: Target Chain mints qRC20 (Happy Path)
+    BridgeExecution --> TxFailed: Network Timeout / Gas Spike (Edge Case)
+    
+    state AutomatedRecovery {
+        TxFailed --> TimeoutTriggered: 120s Grace Period Exceeded
+        TimeoutTriggered --> ProofOfFailure: Fetch cryptographic proof of non-delivery
+        ProofOfFailure --> SmartContractUnlock: Submit proof to Source Chain escrow
+    }
+    
+    SmartContractUnlock --> RefundTriggered: Release funds back to Client Wallet
+    RefundTriggered --> [*]: Session Safely Terminated
+    TxSuccess --> [*]: Orchestration Completed
+```
+
+#### Technical Breakdown of the Recovery Mechanism:
+* **Atomic State Locking**: Funds are held in a non-custodial source escrow. They are never lost in transit if the target chain experiences sudden congestion or a hard fork.
+* **Cryptographic Proof of Failure**: Instead of relying on a centralized backend oracle, the orchestrator verifies target-chain state roots to mathematically prove a transaction did not execute.
+* **Auto-Refund Vector**: Once non-delivery is cryptographically proven, the source contract safely unlocks and reverses the token escrow natively.
+
   
 
 ### ⚖ Legal Disclaimer
