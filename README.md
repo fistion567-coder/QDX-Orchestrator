@@ -268,7 +268,23 @@ flowchart LR
     E --> F[Activación Protocolo Doomsday]
     F --> G[Asset Shielding: ETH → qETH]
     G --> H[Firmas Post-Quantum: Dilithium]
-    H --> I[Transacción validada y segura  
+    H --> I[Transacción validada y segura
+# 🔄 Diagrama de Flujo QDX-Orchestrator
+
+```mermaid
+flowchart TD
+    A[Usuario envía algoritmo] --> B[Smart Contract en Solana]
+    B --> C[Fragmentación en 3 partes]
+    C --> D1[Nodo A GPU]
+    C --> D2[Nodo B GPU]
+    C --> D3[Nodo C GPU]
+    D1 --> E[Resultados parciales]
+    D2 --> E
+    D3 --> E
+    E --> F[Filtro de consenso]
+    F --> G[Liberación de resultados]
+    F --> H[Gestión de fraude]
+
 
 -💌comtacto: fistion567@gmail.com
     
