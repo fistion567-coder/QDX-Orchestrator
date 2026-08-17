@@ -284,6 +284,59 @@ flowchart TD
     E --> F[Filtro de consenso]
     F --> G[Liberación de resultados]
     F --> H[Gestión de fraude]
+# QDX-Orchestrator Demo
+# Objetivo: registrar y verificar trazabilidad de datos médicos en blockchain
+
+import hashlib
+import time
+import json
+
+class Bloque:
+    def __init__(self, index, datos, previo_hash):
+        self.index = index
+        self.timestamp = time.time()
+        self.datos = datos
+        self.previo_hash = previo_hash
+        self.hash = self.calcular_hash()
+
+    def calcular_hash(self):
+        contenido = str(self.index) + str(self.timestamp) + json.dumps(self.datos) + str(self.previo_hash)
+        return hashlib.sha256(contenido.encode()).hexdigest()
+
+class BlockchainMedica:
+    def __init__(self):
+        self.cadena = [self.crear_bloque_genesis()]
+
+    def crear_bloque_genesis(self):
+        return Bloque(0, {"info":"Genesis Block"}, "0")
+
+    def obtener_ultimo_bloque(self):
+        return self.cadena[-1]
+
+    def agregar_bloque(self, datos):
+        previo = self.obtener_ultimo_bloque()
+        nuevo = Bloque(len(self.cadena), datos, previo.hash)
+        self.cadena.append(nuevo)
+
+    def validar_cadena(self):
+        for i in range(1, len(self.cadena)):
+            bloque_actual = self.cadena[i]
+            bloque_previo = self.cadena[i-1]
+            if bloque_actual.hash != bloque_actual.calcular_hash():
+                return False
+            if bloque_actual.previo_hash != bloque_previo.hash:
+                return False
+        return True
+
+# Ejemplo de uso
+qdx = BlockchainMedica()
+qdx.agregar_bloque({"paciente": "ID123", "tratamiento": "Vacuna A", "fecha": "2026-08-17"})
+qdx.agregar_bloque({"paciente": "ID124", "tratamiento": "Medicamento B", "fecha": "2026-08-17"})
+
+for bloque in qdx.cadena:
+    print(f"Bloque {bloque.index} | Hash: {bloque.hash} | Datos: {bloque.datos}")
+
+print("¿Cadena válida?", qdx.validar_cadena())
 
 
 -💌comtacto: fistion567@gmail.com
