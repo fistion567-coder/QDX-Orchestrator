@@ -108,3 +108,6 @@ Visit the project on GitHub
 If you want to collaborate, contribute ideas, or learn more about QDX-Orchestrator, write to me directly:
 - 📧 Email: fistion567@gmail.com
     
+---
+**Official Ticker:** $QDXO  
+*(Updated to avoid conflict with Quidax Token - QDX)*
