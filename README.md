@@ -1,14 +1,13 @@
+# QDXO Project: Orchestrator on Solana
 
-# QDX Project: Orchestrator on Solana
-
-This repository documents the execution workflow of the **Solana-based Orchestrator** applied to molecular simulations for laboratories and pharmaceutical companies, along with the foundations of the Official QDX Project Whitepaper.
+This repository documents the execution workflow of the **Solana-based Orchestrator** applied to molecular simulations for laboratories and pharmaceutical companies, along with the foundations of the Official QDXO Project Whitepaper.
 
 ## 📊 Flowchart
 Orchestrator Diagram
 
 ## 📑 Step-by-Step Explanation
 
-1. **Algorithm Upload:** The client (laboratory or pharmaceutical company) uploads the molecular simulation algorithm to the system and deposits the payment in $QDX tokens or USDC.
+1. **Algorithm Upload:** The client (laboratory or pharmaceutical company) uploads the molecular simulation algorithm to the system and deposits the payment in $QDXO tokens or USDC.
 2. **Solana Orchestrator:** The smart contract receives the mathematical matrix and splits it into three parts.
     - Assigns tasks to different GPU nodes.
     - Uses blind verification to ensure nodes do not know the complete calculation.
@@ -25,9 +24,9 @@ Orchestrator Diagram
     - The penalty (*slashing*) is executed.
     - The task is reassigned to another node to guarantee integrity.
 
-## 📖 QDX Whitepaper Summary
+## 📖 QDXO Whitepaper Summary
 
-The QDX Project introduces a **decentralized exchange resistant to quantum attacks**, featuring key innovations:
+The QDXO Project introduces a **decentralized exchange resistant to quantum attacks**, featuring key innovations:
 - **Post-Quantum Security:** Use of CRYSTALS-Dilithium and Kyber algorithms, standardized by NIST.
 - **QEVM & QR-PoS:** Proprietary virtual machine and optimized consensus, delivering over 5,000 TPS and sub-second finality.
 - **Asset Shielding:** Conversion of classical assets (BTC, ETH, USDC) into secure versions (qBTC, qETH, qUSDC).
@@ -45,7 +44,7 @@ This workflow ensures:
 ## 🚀 Next Steps
 - Implementation of the smart contract on Solana.
 - Development of the interface for medical and pharmaceutical clients.
-- Integration with the payment system in $QDX and USDC.
+- Integration with the payment system in $QDXO and USDC.
 - Expansion of cross-chain bridges and adoption of the qRC20 standard.
 ### 🛡️ Core Security & Compliance Standard
 
@@ -53,22 +52,22 @@ Given the sensitivity of handling infrastructure for pharmaceutical and medical 
 
 * **PII Anonymization**: No Patient Health Information (PHI) or Personally Identifiable Information (PII) ever touches the blockchain layer. Data payloads are encrypted off-chain using AES-256.
 * **On-Chain Cryptographic Proofs**: Only immutable cryptographic hashes of fulfillment milestones, verification timestamps, and compliance audits are permanently anchored to the distributed ledger.
-* **Non-Custodial Escrow**: Payment streams in **\$QDX** and **USDC** are governed strictly by decentralized smart contracts. The platform never holds or controls client private keys or funds.
+* **Non-Custodial Escrow**: Payment streams in **\$QDXO** and **USDC** are governed strictly by decentralized smart contracts. The platform never holds or controls client private keys or funds.
 
 ### 🌐 Cross-Chain Interoperability & Fees
 
 The platform utilizes a hybrid liquidity engine to ensure cheap, frictionless operations across ecosystems:
 
 * **Gas Optimization Layer**: Intended for ultra-low fee handling, abstracting multi-chain complexity so medical enterprises only need to interact with a unified interface.
-* **qRC20 Token Utility**: The **\$QDX** token functions as the native network key, automatically covering cross-chain bridge relay costs, validation rewards, and priority orchestration queuing.
+* **qRC20 Token Utility**: The **\$QDXO** token functions as the native network key, automatically covering cross-chain bridge relay costs, validation rewards, and priority orchestration queuing.
 ### 🔄 Advanced Fault Tolerance & Cross-Chain Atomicity
 
-The most complex engineering challenge of the **QDX-Orchestrator** is ensuring atomic transaction execution across multiple chains. If a bridge relay fails mid-transit, our automated state machine guarantees asset recovery without human intervention:
+The most complex engineering challenge of the **QDXO-Orchestrator** is ensuring atomic transaction execution across multiple chains. If a bridge relay fails mid-transit, our automated state machine guarantees asset recovery without human intervention:
 
 ```mermaid
 stateDiagram-v2
     [*] --> RequestInitiated: Client submits Tx
-    RequestInitiated --> TokenLocked: Escrow locks \$QDX/USDC
+    RequestInitiated --> TokenLocked: Escrow locks \$QDXO/USDC
     
     state BridgeExecution <<choice>>
     TokenLocked --> BridgeExecution: Relay payload via Bridge
@@ -96,7 +95,7 @@ stateDiagram-v2
 
 ### ⚖ Legal Disclaimer
 This project is licensed under the MIT License.
-Commercial use or integration requires connection with the $QDX token and authorization from the author.
+Commercial use or integration requires connection with the $QDXO token and authorization from the author.
 © 2026 Roni — All rights reserved.
 README.md
 ---
