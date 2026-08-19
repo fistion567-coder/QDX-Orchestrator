@@ -4,9 +4,73 @@ This repository documents the execution workflow of the **Solana-based Orchestra
 
 ## 📊 Flowchart
 Orchestrator Diagram
+```text  
 
+1. Descripción del proyecto  
+2. Flowchart (diagrama ASCII)  
+3. Step-by-Step Explanation  
+4. **Execution Commands   
+5. Notes (recomendaciones técnicas)
+
+
+        +----------------------+
+        |  Client (Lab/Pharma) |
+        +----------+-----------+
+                   |
+                   v
+        +----------------------+
+        |  QDXO Orchestrator   |
+        |  (Solana Smart Logic)|
+        +----------+-----------+
+                   |
+                   v
+        +----------------------+
+        |  Blockchain Storage  |
+        |  (Simulation Results)|
+        +----------+-----------+
+                   |
+                   v
+        +----------------------+
+        |  Analytics Dashboard |
+        +----------------------+
 ## 📑 Step-by-Step Explanation
 
+## 📄 Step-by-Step Explanation
+
+1. **Algorithm Upload**  
+   The orchestrator receives the algorithm file (e.g., `algorithm.sol`) and prepares it for execution.
+
+2. **Orchestration Process**  
+   The orchestrator coordinates execution across blockchain nodes, ensuring consistency and traceability.
+
+3. **Simulation Results**  
+   Results are stored on-chain and can be retrieved for analysis and verification.
+
+---
+
+## ⚙️ Execution Commands
+
+```bash
+# 1. Upload algorithm file
+python3 qdx_demo.py --upload algorithm.sol
+
+# 2. Run orchestration process
+python3 qdx_demo.py --run orchestrator
+
+# 3. Retrieve simulation results
+python3 qdx_demo.py --fetch results.json
+
+## ⚙️ Execution Commands
+
+```bash
+# 1. Upload algorithm file
+python3 qdx_demo.py --upload algorithm.sol
+
+# 2. Run orchestration process
+python3 qdx_demo.py --run orchestrator
+
+# 3. Retrieve simulation results
+python3 qdx_demo.py --fetch results.json
 1. **Algorithm Upload:** The client (laboratory or pharmaceutical company) uploads the molecular simulation algorithm to the system and deposits the payment in $QDXO tokens or USDC.
 2. **Solana Orchestrator:** The smart contract receives the mathematical matrix and splits it into three parts.
     - Assigns tasks to different GPU nodes.
@@ -91,7 +155,31 @@ stateDiagram-v2
 * **Cryptographic Proof of Failure**: Instead of relying on a centralized backend oracle, the orchestrator verifies target-chain state roots to mathematically prove a transaction did not execute.
 * **Auto-Refund Vector**: Once non-delivery is cryptographically proven, the source contract safely unlocks and reverses the token escrow natively.
 
-  
+  ## 🌍 Impact and Purpose
+
+QDXO is designed to bring **trust, transparency, and efficiency** to medical and pharmaceutical processes through blockchain orchestration.  
+
+- **Healthcare Applications**: Enables secure storage and verification of clinical algorithms and simulation results.  
+- **Financial Inclusion**: Provides a decentralized framework for tokenized access ($QDX), lowering barriers for institutions and individuals.  
+- **Traceability**: Ensures end-to-end visibility of data, from algorithm upload to blockchain storage and analytics.  
+- **Scalability**: Built on Solana, allowing high throughput and low transaction costs.  
+
+By combining blockchain technology with medical innovation, QDXO aims to **improve patient outcomes, reduce fraud, and accelerate research adoption**.
+
+## 🔐 Wallet Connection (Defly / Pera)
+
+To interact with the blockchain, QDXO requires a connected wallet.  
+Supported wallets: **Defly** and **Pera**.
+
+```bash
+# 1. Connect wallet
+solana-keygen new --outfile ~/.config/solana/id.json
+
+# 2. Import wallet into Defly/Pera
+# (Use the generated seed phrase from Solana CLI)
+
+# 3. Verify connection
+solana address
 
 ### ⚖ Legal Disclaimer
 This project is licensed under the MIT License.
