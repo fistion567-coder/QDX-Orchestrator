@@ -1,5 +1,6 @@
 # QDXO Project: Orchestrator on Solana
-# 🔄 Diagrama de Flujo QDX‑Orchestrator
+
+## 📊 Flowchart
 
 ```mermaid
 flowchart TD
@@ -14,8 +15,8 @@ flowchart TD
     E --> F[Filtro de consenso]
     F --> G[Liberación de resultados]
     F --> H[Gestión de fraude]
-This repository documents the execution workflow of the **Solana-based Orchestrator** applied to molecular simulations for laboratories and pharmaceutical companies, along with the foundations of the Official QDXO Project Whitepaper.
-
+### 📌 Explanation
+The **QDX‑Orchestrator** receives an algorithm, splits it into three GPU nodes for parallel processing, consolidates the partial results, and applies a consensus filter that ensures integrity and fraud detection before releasing the final output.
 ## 📊 Flowchart
 Orchestrator Diagram
 ```text  
