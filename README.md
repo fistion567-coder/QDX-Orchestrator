@@ -14,7 +14,7 @@
         v
 +------------------------+
 |  GPU Nodes (A, B, C)   |
-+------------------------+,
++------------------------+
 ### 📌 Explanation
 The **QDX‑Orchestrator** receives an algorithm, splits it into three GPU nodes for parallel processing, consolidates the partial results, and applies a consensus filter that ensures integrity and fraud detection before releasing the final output.
 
