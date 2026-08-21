@@ -14,8 +14,8 @@ flowchart TD
     D3 --> E
     E --> F[Filtro de consenso]
     F --> G[Liberación de resultados]
-    F --> H[Gestión de fraude]
-### 📌 Explanation
+    F --> H[Gestión de fraude] 
+--Explanation
 The **QDX‑Orchestrator** receives an algorithm, splits it into three GPU nodes for parallel processing, consolidates the partial results, and applies a consensus filter that ensures integrity and fraud detection before releasing the final output.
 ## 📊 Flowchart
 Orchestrator Diagram
