@@ -1,5 +1,19 @@
 # QDXO Project: Orchestrator on Solana
+# 🔄 Diagrama de Flujo QDX‑Orchestrator
 
+```mermaid
+flowchart TD
+    A[Usuario envía algoritmo] --> B[Smart Contract en Solana]
+    B --> C[Fragmentación en 3 partes]
+    C --> D1[Nodo A GPU]
+    C --> D2[Nodo B GPU]
+    C --> D3[Nodo C GPU]
+    D1 --> E[Resultados parciales]
+    D2 --> E
+    D3 --> E
+    E --> F[Filtro de consenso]
+    F --> G[Liberación de resultados]
+    F --> H[Gestión de fraude]
 This repository documents the execution workflow of the **Solana-based Orchestrator** applied to molecular simulations for laboratories and pharmaceutical companies, along with the foundations of the Official QDXO Project Whitepaper.
 
 ## 📊 Flowchart
