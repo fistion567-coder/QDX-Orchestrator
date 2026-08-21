@@ -1,22 +1,22 @@
 # QDXO Project: Orchestrator on Solana
 
-## 📊 Flowchart
-
-```mermaid
-flowchart TD
-    A[Usuario envía algoritmo] --> B[Smart Contract en Solana]
-    B --> C[Fragmentación en 3 partes]
-    C --> D1[Nodo A GPU]
-    C --> D2[Nodo B GPU]
-    C --> D3[Nodo C GPU]
-    D1 --> E[Resultados parciales]
-    D2 --> E
-    D3 --> E
-    E --> F[Filtro de consenso]
-    F --> G[Liberación de resultados]
-    F --> H[Gestión de fraude] 
---Explanation
-The **QDX‑Orchestrator** receives an algorithm, splits it into three GPU nodes for parallel processing, consolidates the partial results, and applies a consensus filter that ensures integrity and fraud detection before releasing the final output....
+```text
++------------------------+
+|  Client (Lab/Pharma)   |
++------------------------+
+        |
+        v
++------------------------+
+|  QDXO Orchestrator     |
+|  (Solana Smart Logic)  |
++------------------------+
+        |
+        v
++------------------------+
+|  GPU Nodes (A, B, C)   |
++------------------------+,
+### 📌 Explanation
+The **QDX‑Orchestrator** receives an algorithm, splits it into three GPU nodes for parallel processing, consolidates the partial results, and applies a consensus filter that ensures integrity and fraud detection before releasing the final output.
 
 
 ## 📊 Flowchartp
